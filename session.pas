@@ -217,7 +217,7 @@ begin
 end;
 
 function TVisaSession.QueryBlock(const AQuery: string; var Data; ALength: longint): longint;
-var st: RawByteString;
+var st: string;
     digits,size,ofs: longint;
 begin
    fLock.Enter;
@@ -251,8 +251,7 @@ begin
 end;
 
 function TVisaSession.CommandBlock(const ACmd: string; const Data; ALength: longint): longint;
-var msg: RawByteString;
-    lenStr: string;
+var msg, lenStr: string;
 begin
    result := ALength;
 
